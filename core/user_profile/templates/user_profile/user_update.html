@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{% trans "editing"|capfirst %} {{ request.user }} {% trans "profile at" %} {{ block.super }}{% endblock title %}
+{% block content %}
+<h1>{% trans "editing"|capfirst %} {{ request.user }} {% trans "profile" %}</h1>
+<form action={{ request.path }} method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form_user.as_p }}
+    {{ form_profile.as_p }}
+    <p><button type="submit">{% trans "confirm" %}</button></p>
+</form>
+{% endblock content %}
