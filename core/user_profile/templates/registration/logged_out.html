@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
-{% block title %}{% trans "See you later at" %} {{ block.super }}{% endblock title %}
+{% block title %}See you later at {{ block.super }}{% endblock title %}
 {% block content %}
-<h1>{% trans "See you later at" %} AUTOMATON</h1>
-<p>{% trans "You are always welcome back" %}.</p>
-<p><a href="{% url 'login' %}">{% trans "log in"|capfirst %}</a> {% trans "again" %}.</p>
+<h1>See you later at AUTOMATON!</h1>
+<p>You are always welcome.</p>
+<p><a href="{% url 'login' %}">Log in again.</p>
 {% endblock content %}

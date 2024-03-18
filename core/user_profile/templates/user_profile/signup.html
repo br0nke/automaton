@@ -1,10 +1,10 @@
-{% extends "base.html" %}{% load i18n %}
-{% block title %}{% trans "signup for"|capfirst %} {{ block.super }}{% endblock title %}
+{% extends "base.html" %}
+{% block title %}Signup {{ block.super }}{% endblock title %}
 {% block content %}
-<h1>{% trans "signup for"|capfirst %} AUTOMATON</h1>
+<h1>Signup for AUTOMATON and get access!</h1>
 <form method="post" action="{{ request.path }}">
     {% csrf_token %}
     {{ form.as_p }}
-    <p><button type="submit">{% trans "register"|capfirst %}</button></p>
+    <p><button type="submit">Register</button></p>
 </form>
 {% endblock content %}

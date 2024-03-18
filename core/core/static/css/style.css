@@ -1,0 +1,26 @@
+body {
+    font-family: sans-serif;
+}
+
+header {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px;
+    background-image: linear-gradient(to bottom, #e0e0e0, #f0f0f0);
+}
+
+.hero img {
+    width: 50%;
+}
+
+.discussions {
+    padding: 20px;
+}
+
+.discussions li {
+    margin-bottom: 15px;
+}

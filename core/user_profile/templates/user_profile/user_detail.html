@@ -1,5 +1,5 @@
-{% extends "base.html" %}{% load i18n %}{% load crispy_forms_tags %}
-{% block title %}{{ object }} {% trans "at" %} {{ block.super }}{% endblock title %}
+{% extends "base.html" %}{% load crispy_forms_tags %}
+{% block title %}{{ object }} at {{ block.super }}{% endblock title %}
 {% block content %}
 <h1>User: {{ object.username }}</h1>
     <div class="profile-image-container">
@@ -11,8 +11,8 @@
       />
     </div>
   <p>Full name: {{ object.first_name }} {{ object.last_name }}</p>
-  <p>{% trans "e-mail"|capfirst %}: {{ object.email }}</p>
+  <p>e-mail: {{ object.email }}</p>
   {% if object == request.user %}
-    <p><a class="button" href="{% url "user_update" %}">{% trans "edit profile data" %}</a></p>
+    <p><a class="button" href="{% url "user_update" %}">Edit profile data</a></p>
   {% endif %}
 {% endblock content %}
