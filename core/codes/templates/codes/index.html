@@ -1,10 +1,20 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}{% load static %}
 {% block content %}
-<h1>Welcome!</h1>
-<h2>Our Latest News:</h2>
-<div class="info-container">
-    <p>Total users on platform: 10K+!</p>
-    <p>Available collaborating porjects: 3k+!</p>
-</div>
+<section class="hero">
+    <h1>Welcome!</h1>
+    <img src="{% static 'images/hero.jpg' %}" alt="Programmers collaborating">
+    <h2>Connect, Code, Share Together</h2>
+    <a href="{% url 'signup' %}" class="btn btn-primary">Join the Community!</a>
+</section>
+
+{% comment %} <section class="discussions">
+    <h2>Latest Discussions</h2>
+    <ul>
+        <li>
+            <h3><a href="{% url 'discussion_detail' discussion.id %}">Django for Beginners</a></h3>
+            <p>Need help getting started with Django? Join the conversation!</p>
+        </li>
+        </ul>
+</section> {% endcomment %}
 {% endblock content %}

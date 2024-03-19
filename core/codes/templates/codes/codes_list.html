@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}{{ block.super }}Codes list{% endblock title %}
+{% block content %}
+<h1>All listed Codes</h1>
+<div class="toolbar">
+  <form method="GET" action="{% url 'codes_search' %}">
+    <input type="text" name="search" placeholder="Search the list...">
+    <button class="btn btn-primary" type="submit">Search</button>
+  </form>
+</div>
+<div class="container">
+    <div class="row">
+      {% for listing in codes_list %}
+        <div class="col-md-4">
+          <a href="{% url "codes_detail" listing.pk %}">
+            <img
+              src="{{ listing.image.url }}"
+              alt="{{ listing.title }}"
+              style="object-fit: cover; width: 340px; height: 300px;"
+            />
+            <div class="content-section" style="text-align: center; color: rgb(127, 153, 255);">
+              {{ listing.title }} - {{ listing.category }} - By: {{ listing.user.username }}
+            </div>
+          </a>
+        </div>
+  
+        {% if forloop.counter|divisibleby:3 %}
+         <div class="row"></div>
+        {% endif %}
+      {% endfor %}
+    </div>
+</div>            
+{% endblock content %}

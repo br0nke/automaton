@@ -62,7 +62,7 @@ db.sqlite3
 db.sqlite3-journal
 core/core/local_settings.py
 *media/
-core/core/static/admin
+core/codes/static/admin
 
 # Flask stuff:
 instance/

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{{ object }} at {{ block.super }}{% endblock title %}
+{% block content %}
+    <h1>{{ listing.title }}</h1>
+    <p>Coder: <a href="{% url "user_detail" listing.user.username %}">{{ listing.user }}</a></p>
+    <p>Description: {{ listing.description }}</p> <p>Upload date: {{ listing.created_at|date:"d-m-y" }}</p>
+    <p>Category: {{ listing.category }}</p>
+    <p>GitHub link: {{ listing.link }}</p>
+    <span><br><br></span> 
+    {% if listing.image %}
+        <img src="{{ listing.image.url }}" alt="{{ listing.title }}">
+    {% endif %}
+    {% comment %} <button class="button" type="like">Like!</button> {% endcomment %}
+{% endblock content %}
