@@ -1,14 +1,13 @@
-{% extends "base.html" %}{% load crispy_forms_tags %}
+{% extends "base.html" %}{% load crispy_forms_tags %}{% load static %}
 {% block title %}{{ object }} at {{ block.super }}{% endblock title %}
 {% block content %}
 <h1>User: {{ object.username }}</h1>
     <div class="profile-image-container">
-      <img
-        src="{{ user.profile.picture.url }}"
-        alt="'picture here'"
-        class="rounded-circle profile-img"
-        style="width: 200; height: auto;"
-      />
+      {% if user.profile.picture %}
+      <img src="{{ user.profile.picture.url }}" alt="profile picture" class="rounded-circle profile-img" style="width: 400px; height: 400px;">
+    {% else %}
+      <img src="{% static 'default.jpg' %}" alt="No profile picture" class="rounded-circle profile-img" style="width: 400px; height: 400px;">
+      {% endif %}
     </div>
   <p>Full name: {{ object.first_name }} {{ object.last_name }}</p>
   <p>e-mail: {{ object.email }}</p>

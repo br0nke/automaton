@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}{% load static %}
 {% block content %}
+{% comment %} {% if not user.is_authenticated %} {% endcomment %}
 <section class="hero">
     <h1>Welcome!</h1>
     <img src="{% static 'images/hero.jpg' %}" alt="Programmers collaborating">
     <h2>Connect, Code, Share Together</h2>
     <a href="{% url 'signup' %}" class="btn btn-primary">Join the Community!</a>
 </section>
+{% comment %} {% else %} {% endcomment %}
 
 {% comment %} <section class="discussions">
     <h2>Latest Discussions</h2>

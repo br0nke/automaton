@@ -23,7 +23,7 @@
                             {% if user.is_superuser or user.is_staff %}
                                 <li><a href="{% url 'admin:index' %}" class="btn btn-primary">Admin</a></li>
                             {% endif %}
-                            <li><form method="post" action="{% url "logout" %}" class="btn btn-primary">{% csrf_token %}Log out</button></form></li>
+                            <li><form method="post" action="{% url "logout" %}">{% csrf_token %}<button type="submit" class="btn btn-primary">Log out</button></form></li>
                         {% else %}
                             <li><a href="{% url 'login' %}" class="btn btn-primary">Log in</a></li>
                             <li><a href="{% url 'signup' %}" class="btn btn-primary">Sign up</a></li>
@@ -64,7 +64,15 @@
     </header>
 
     <main>{% block content %}{% endblock content %}</main>
-
+    <style>
+      .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+        background-color: rgb(199, 200, 217);
+      }
+    </style>
     <footer>
         {% block footer %}{% endblock footer %}
         <p>&copy; 2024 Automaton Community</p>

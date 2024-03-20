@@ -1,10 +1,15 @@
 {% extends "base.html" %}
-{% block title %}Signup {{ block.super }}{% endblock title %}
+{% block title %}Signup{% endblock title %}
 {% block content %}
-<h1>Signup for AUTOMATON and get access!</h1>
-<form method="post" action="{{ request.path }}">
+<h1><h1 style="text-align: center;">Signup for AUTOMATON and get access!</style></h1>
+<br>
+{% if not user.is_authenticated %}
+  <form method="post" action="{{ request.path }}">
     {% csrf_token %}
     {{ form.as_p }}
-    <p><button type="submit">Register</button></p>
-</form>
+    <p><button type="submit" class="btn btn-primary">Register</button></p>
+  </form>
+{% else %}
+  <p>You already have an account. Click <a href="/">here</a> to go to the home page.</p>
+{% endif %}
 {% endblock content %}
