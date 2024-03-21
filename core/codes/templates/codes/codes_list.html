@@ -3,12 +3,16 @@
 {% block title %}{{ block.super }}Codes list{% endblock title %}
 {% block content %}
 <h1>All listed Codes</h1>
+<div class="centered-element">
 <div class="toolbar">
   <form method="GET" action="{% url 'codes_search' %}">
-    <input type="text" name="search" placeholder="Search the list...">
+    <br><input type="text" name="search" placeholder="Search the list...">
     <button class="btn btn-primary" type="submit">Search</button>
   </form>
+  <a href="{% url 'codes_create' %}" class="btn btn-primary">Add Project</a>
 </div>
+</div>
+<br>
 <div class="container">
     <div class="row">
       {% for listing in codes_list %}
@@ -17,9 +21,9 @@
             <img
               src="{{ listing.image.url }}"
               alt="{{ listing.title }}"
-              style="object-fit: cover; width: 340px; height: 300px;"
+              style="object-fit: cover; width: 340px; height: 300px; border-radius: 20px;"
             />
-            <div class="content-section" style="text-align: center; color: rgb(127, 153, 255);">
+            <div class="content-section">
               {{ listing.title }} - {{ listing.category }} - By: {{ listing.user.username }}
             </div>
           </a>

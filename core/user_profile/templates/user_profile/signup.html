@@ -1,15 +1,22 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% load crispy_forms_tags %}
 {% block title %}Signup{% endblock title %}
 {% block content %}
-<h1><h1 style="text-align: center;">Signup for AUTOMATON and get access!</style></h1>
 <br>
+<div class="centered-element">
 {% if not user.is_authenticated %}
-  <form method="post" action="{{ request.path }}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <p><button type="submit" class="btn btn-primary">Register</button></p>
+  <form class="form" method="post" action="{{ request.path }}">
+    <p class="title">Register </p>
+    <p class="message">Signup now and get full access. </p>
+    <div class="flex">
+      <label class="col-sm-2 col-form-label">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <p><button class="submit">Register</button></p>
+      </label>
+    </div>
   </form>
 {% else %}
-  <p>You already have an account. Click <a href="/">here</a> to go to the home page.</p>
+  <p>You already registered. Click <a href="/">here</a> to reach the home page.</p>
+</div>
 {% endif %}
 {% endblock content %}
