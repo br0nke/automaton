@@ -2,6 +2,8 @@
 {% block title %}See you later at {{ block.super }}{% endblock title %}
 {% block content %}
 <h1>See you later at AUTOMATON!</h1>
+<div class="centered-element">
 <p>You are always welcome.</p>
 <p><a href="{% url 'login' %}">Log in again.</a></p>
+</div>
 {% endblock content %}

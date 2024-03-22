@@ -2,6 +2,7 @@
 {% block title %}{{ object }} at {{ block.super }}{% endblock title %}
 {% block content %}
 <h1>User: {{ object.username }}</h1>
+<div class="centered-element">
     <div class="profile-image-container">
       {% if user.profile.picture %}
       <img src="{{ user.profile.picture.url }}" alt="profile picture" class="rounded-circle profile-img" style="width: 400px; height: 400px;">
@@ -9,9 +10,11 @@
       <img src="{% static 'default.jpg' %}" alt="No profile picture" class="rounded-circle profile-img" style="width: 400px; height: 400px;">
       {% endif %}
     </div>
+    <br>
   <p>Full name: {{ object.first_name }} {{ object.last_name }}</p>
-  <p>e-mail: {{ object.email }}</p>
+  <p>E-mail: {{ object.email }}</p>
   {% if object == request.user %}
-    <p><a class="button" href="{% url "user_update" %}">Edit profile data</a></p>
+    <p><a class="btn btn-primary" href="{% url "user_update" %}">Edit profile data</a></p>
   {% endif %}
+</div>
 {% endblock content %}

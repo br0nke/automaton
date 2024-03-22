@@ -79,7 +79,11 @@ main h1 {
 }
 
 .centered-element {
-    margin: auto 800px;
+    margin: auto 743px;
+}
+
+.toolbar {
+    text-align: center;
 }
   
 .title {

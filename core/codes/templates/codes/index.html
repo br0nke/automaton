@@ -4,7 +4,7 @@
 {% comment %} {% if not user.is_authenticated %} {% endcomment %}
 <section class="hero">
     <h1>Welcome!</h1>
-    <img src="{% static 'images/hero.jpg' %}" alt="Programmers collaborating">
+    <img src="{% static 'images/hero.jpg' %}" alt="Programmers collaborating" style="border-radius: 20px;">
     <h2>Connect, Code, Share Together</h2>
     <a href="{% url 'signup' %}" class="btn btn-primary">Join the Community!</a>
 </section>
