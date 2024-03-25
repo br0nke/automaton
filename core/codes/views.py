@@ -5,13 +5,16 @@ from django.http import HttpRequest, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
 from django.db.models import Q
+from chat.models import Discussion
 
 User = get_user_model()
 
 def index(request: HttpRequest) -> HttpResponse:
+    discussions = Discussion.objects.all().order_by('-created_at')[:5]
     context = {
         'codes_count': models.CodeListing.objects.count(),
         'users_count': models.User.objects.count(),
+         'discussions': discussions,
     }
     return render(request, 'codes/index.html', context)
 

@@ -1,0 +1,26 @@
+{% extends "base.html" %}  {% load crispy_forms_tags %}  {% block content %}
+  <h1>Discussions</h1>
+
+  <h2>Create New Discussion</h2>
+  <form method="post" action="{% url 'chat:discussion_create' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create Discussion</button>
+  </form>
+  
+
+  {% if discussions %}
+    
+      {% for discussion in discussions %}
+      <li>
+          <h3><a href="{% url 'chat:discussion_detail' discussion.id %}">{{ discussion.title }}</a></h3>
+          <p>{{ discussion.content|truncatechars:50 }}</p>
+      </li>
+      {% endfor %}
+  
+    
+  {% else %}
+    <p>There are no discussions yet. Be the first to create one!</p>
+  {% endif %}
+
+{% endblock content %}

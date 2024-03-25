@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'core',
     'codes',
     'user_profile',
+    'chat',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',

@@ -1,22 +1,21 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}{% load static %}
 {% block content %}
-{% comment %} {% if not user.is_authenticated %} {% endcomment %}
+{% if not user.is_authenticated %}
 <section class="hero">
     <h1>Welcome!</h1>
     <img src="{% static 'images/hero.jpg' %}" alt="Programmers collaborating" style="border-radius: 20px;">
     <h2>Connect, Code, Share Together</h2>
     <a href="{% url 'signup' %}" class="btn btn-primary">Join the Community!</a>
 </section>
-{% comment %} {% else %} {% endcomment %}
-
-{% comment %} <section class="discussions">
-    <h2>Latest Discussions</h2>
-    <ul>
-        <li>
-            <h3><a href="{% url 'discussion_detail' discussion.id %}">Django for Beginners</a></h3>
-            <p>Need help getting started with Django? Join the conversation!</p>
-        </li>
-        </ul>
-</section> {% endcomment %}
+{% else %}
+<h2>Latest Discussions</h2>
+    {% if discussions %}
+    <ul class="discussions">
+            <a href="{% url 'chat:discussion_list' %}" class="btn btn-primary">Discussions</a>
+    </ul>
+    {% else %}
+    <p>There are no discussions yet. Be the first to create one!</p>
+    {% endif %}
+{% endif %}
 {% endblock content %}

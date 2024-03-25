@@ -1,0 +1,26 @@
+{% extends "base.html" %}  {% block content %}
+  <h1>{{ discussion.title }}</h1>  <p>Started by: {{ discussion.starter.username }}</p>
+  <p>Created at: {{ discussion.created_at }}</p>
+
+  <h2>Posts</h2>
+  {% if discussion.posts.all %}
+    <ul class="posts">
+      {% for post in discussion.posts.all %}
+        <li>
+          <p><strong>{{ post.author.username }}</strong> - {{ post.created_at }}</p>
+          <p>{{ post.content }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>There are no posts in this discussion yet. Be the first to add one!</p>
+  {% endif %}
+
+  <h2>Add Comment:</h2>
+  <form method="post" action="{% url 'chat:add_post' discussion.id %}">
+    {% csrf_token %}
+    {{ form.as_p }}  <input type="hidden" name="discussion" value="{{ discussion.id }}">
+    <button type="submit">Comment</button>
+  </form>  
+
+{% endblock content %}
