@@ -3,14 +3,12 @@
 {% block title %}{{ block.super }}Codes list search{% endblock title %}
 {% block content %}
 <h1>Codes Search Results</h1>
-<div class="centered-element">
 <div class="toolbar">
   <form method="GET" action="{% url 'codes_search' %}">
     <br><input type="text" name="search" placeholder="Search the list...">
     <button class="btn btn-primary" type="submit">Search</button>
   </form>
   <a href="{% url 'codes_create' %}" class="btn btn-primary">Add Project</a>
-</div>
 </div>
 <br>
 <div class="container">

@@ -11,16 +11,15 @@
 </head>
 <body>
     <header>
-        <h1>Automaton Community</h1>
+        <h1><strong>Automaton Community</strong></h1>
         
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="{% url 'index' %}" class="btn btn-primary">Home</a></li>
-                {% comment %} <li><a href="{% url 'discussions' %}">Discussions</a></li> {% endcomment %}
-                <li><a href="{% url 'codes_list' %}" class="btn btn-primary">Projects</a></li>
                     <ul class="nav">
                         {% if user.is_authenticated %}
-                            <li><a href="{% url 'user_detail_current' %}" class="btn btn-primary">{{ user }}</a></li>
+                            <li><a href="{% url 'codes_list' %}" class="btn btn-primary">Projects</a></li>
                             <li><a href="{% url 'chat:discussion_list' %}" class="btn btn-primary">Discussions</a></li>
+                            <li><a href="{% url 'user_detail_current' %}" class="btn btn-primary">{{ user }}</a></li>
                             {% if user.is_superuser or user.is_staff %}
                                 <li><a href="{% url 'admin:index' %}" class="btn btn-primary">Admin</a></li>
                             {% endif %}

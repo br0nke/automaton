@@ -2,12 +2,8 @@
 {% block title %}Discussions {{ block.super }}{% endblock title %}
 {% block content %}
 <h1>Create new discussion:</h1>
-<div class="centered-element">
-<div class="form">
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <button class="btn btn-primary" type="submit">Publish Discussion</button>
     </form>
-</div>
-</div>

@@ -1,5 +1,5 @@
 {% extends "base.html" %}  {% block content %}
-  <h1>{{ discussion.title }}</h1>  <p>Started by: {{ discussion.starter.username }}</p>
+  <h1>{{ discussion.title }}</h1>  <p>Started by:<strong> {{ discussion.starter.username }}</strong></p>
   <p>Created at: {{ discussion.created_at }}</p>
 
   <h2>Posts</h2>
@@ -20,7 +20,7 @@
   <form method="post" action="{% url 'chat:add_post' discussion.id %}">
     {% csrf_token %}
     {{ form.as_p }}  <input type="hidden" name="discussion" value="{{ discussion.id }}">
-    <button type="submit">Comment</button>
+    <button class="btn btn-primary" type="submit">Comment</button>
   </form>  
 
 {% endblock content %}

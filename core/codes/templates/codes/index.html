@@ -9,7 +9,7 @@
     <a href="{% url 'signup' %}" class="btn btn-primary">Join the Community!</a>
 </section>
 {% else %}
-<h2>Latest Discussions</h2>
+<h1>Latest Discussions</h1>
     {% if discussions %}
     <ul class="discussions">
             <a href="{% url 'chat:discussion_list' %}" class="btn btn-primary">Discussions</a>
@@ -17,5 +17,8 @@
     {% else %}
     <p>There are no discussions yet. Be the first to create one!</p>
     {% endif %}
+        <h1>Latest Projects</h1>
+        <ul class="discussions">
+            <a href="{% url 'codes_list' %}" class="btn btn-primary">Projects</a>
 {% endif %}
 {% endblock content %}
