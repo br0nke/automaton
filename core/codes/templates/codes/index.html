@@ -9,16 +9,21 @@
     <a href="{% url 'signup' %}" class="btn btn-primary">Join the Community!</a>
 </section>
 {% else %}
-<h1>Latest Discussions</h1>
+    <section class="hero">
+    <h1>Latest Discussions</h1>
+    <img src="{% static 'images/discussions.jpg' %}" alt="Programmers collaborating" style="border-radius: 20px; width: 30%;">
     {% if discussions %}
-    <ul class="discussions">
-            <a href="{% url 'chat:discussion_list' %}" class="btn btn-primary">Discussions</a>
-    </ul>
+    <h2>Join or create discussions!</h2>
+    <a href="{% url 'chat:discussion_list' %}" class="btn btn-primary">Discussions</a>
+    </section>
     {% else %}
     <p>There are no discussions yet. Be the first to create one!</p>
     {% endif %}
-        <h1>Latest Projects</h1>
-        <ul class="discussions">
+        <section class="hero">
+            <h1>Latest Projects</h1>
+            <img src="{% static 'images/projects.jpg' %}" alt="Programmers projects" style="border-radius: 20px; width: 30%;">
+            <h2>Check or share projects!</h2>
             <a href="{% url 'codes_list' %}" class="btn btn-primary">Projects</a>
+        </section>
 {% endif %}
 {% endblock content %}

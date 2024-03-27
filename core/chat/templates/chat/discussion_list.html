@@ -1,6 +1,6 @@
 {% extends "base.html" %}  {% load crispy_forms_tags %}  {% block content %}
 <h1>Discussions</h1>
-<form method="post" action="{% url 'chat:discussion_create' %}">
+<form class="form" method="post" action="{% url 'chat:discussion_create' %}">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="btn btn-primary">Create Discussion</button>
@@ -10,7 +10,7 @@
       {% for discussion in discussions %}
       <li>
           <h3><a href="{% url 'chat:discussion_detail' discussion.id %}">{{ discussion.title }}</a></h3>
-          <p>{{ discussion.content|truncatechars:50 }}</p>
+          <p>Post: {{ discussion.main_content|truncatechars:50 }}</p>
           <p>{{ discussion.created_at }} By: {{ discussion.starter }}</p>
       </li>
       {% endfor %}
