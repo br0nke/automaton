@@ -1,9 +1,11 @@
 {% extends "base.html" %}  {% block content %}
+<br>
 <div class="discussion">
-  <h1>{{ discussion.title }}</h1>  <p>Started by:<strong> {{ discussion.starter.username }}</strong></p>
+  <h1>{{ discussion.title }}</h1>  <p>Started by:<strong><a href="{% url "user_detail" discussion.starter.username %}">{{ discussion.starter.username }}</a></strong></p>
   <p>Post: {{ discussion.main_content }}</p>
   <p>Created at: {{ discussion.created_at }}</p>
 </div>
+<br>
   <h2>Posts</h2>
   {% if discussion.posts.all %}
     <ul class="posts">

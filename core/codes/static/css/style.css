@@ -52,6 +52,11 @@ footer {
 .discussion {
     padding: 20px;
     text-align: center;
+    max-width: 400px;
+    background-color: #d1d1d1ef;
+    border-radius: 20px;
+    outline-style: double;
+    outline-color: #2540afcb;
 }
 
 .discussions li {
