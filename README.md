@@ -21,7 +21,7 @@ Automaton Community fosters connections and knowledge sharing among programmers.
 To set up Automaton Community locally, you'll need Python and Django installed. Here's a step-by-step guide:
 
 1. **Prerequisites**
-    * Python (version X.Y or later recommended) - [https://www.python.org/downloads/](https://www.python.org/downloads/)
+    * Python (version 3.10 or later recommended) - [https://www.python.org/downloads/](https://www.python.org/downloads/)
     * Django (install using `pip install django`) - [https://docs.djangoproject.com/en/5.0/](https://docs.djangoproject.com/en/5.0/)
 
 2. **Clone the Repository**
