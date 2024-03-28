@@ -3,6 +3,7 @@
 {% block content %}
 <h1>Log in to AUTOMATON</h1>
 <div class="centered-element">
+<div class="form">
 {% if form.errors %}
 <p class="box box-error">Log in error. Please try again.</p>
 {% endif %}
@@ -16,5 +17,6 @@
 </form>
 <p><a href="{% url 'password_reset' %}">Forgot password?</a></p>
 <p>If you do not have an account, please <a href="{% url 'signup' %}">sign up.</a>
+</div>
 </div>
 {% endblock content %}

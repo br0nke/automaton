@@ -3,11 +3,14 @@
 {% block content %}
 <h1>User: {{ object.username }}</h1>
 <div class="centered-element">
+  <div class="form">
     <div class="profile-image-container">
       {% if user.profile.picture %}
-      <img src="{{ user.profile.picture.url }}" alt="profile picture" class="rounded-circle profile-img" style="width: 400px; height: 400px;">
+      <a href="{{ user.profile.picture.url }}" target="_blank">
+        <img src="{{ user.profile.picture.url }}" alt="profile picture" class="rounded-circle profile-img" style="width: 400px; height: 400px; outline-style: double;">
+      </a>
     {% else %}
-      <img src="{% static 'default.jpg' %}" alt="No profile picture" class="rounded-circle profile-img" style="width: 400px; height: 400px;">
+      <img src="{% static 'default.jpg' %}" alt="No profile picture" class="rounded-circle profile-img" style="width: 400px; height: 400px; outline-style: double;">
       {% endif %}
     </div>
     <br>
@@ -16,5 +19,6 @@
   {% if object == request.user %}
     <p><a class="btn btn-primary" href="{% url "user_update" %}">Edit profile data</a></p>
   {% endif %}
+  </div>
 </div>
 {% endblock content %}

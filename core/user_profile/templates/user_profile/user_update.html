@@ -2,10 +2,12 @@
 {% block title %}Editing {{ request.user }} profile at {{ block.super }}{% endblock title %}
 {% block content %}
 <h1>Editing {{ request.user }} profile</h1>
-<form action={{ request.path }} method="post" enctype="multipart/form-data">
+<div class="centered-element">
+<form class="form" action={{ request.path }} method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form_user.as_p }}
     {{ form_profile.as_p }}
     <p><button class="btn btn-primary" type="submit">Confirm</button></p>
 </form>
+</div>
 {% endblock content %}

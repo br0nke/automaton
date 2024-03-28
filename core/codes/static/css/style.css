@@ -1,4 +1,6 @@
 body {
+    background-image: url(../images/background.jpg);
+    background-size: cover;
     min-height: 100vh;
     font-size: 16px;
     flex-direction: column;
@@ -28,7 +30,12 @@ header ul li {
 .hero {
     text-align: center;
     padding: 50px;
-    background-image: linear-gradient(to bottom, #e0e0e0, #f0f0f0);
+    background-image: linear-gradient(to bottom, #e0e0e0d8, #f0f0f0dc);
+}
+
+.hero h1 {
+    background-color: #1d4aff00;
+    background-image: linear-gradient(to bottom, #e0e0e000, #f0f0f000);
 }
 
 .hero img {
@@ -70,6 +77,8 @@ footer {
 
 main h1 {
     text-align: center;
+    background-image: linear-gradient(to bottom, #2540afcb, #2540afcb);
+    /* background-color: from #2540afcb; */
 }
 
 .form {
@@ -217,4 +226,11 @@ main h1 {
 
 .discussions {
     text-align: center;
+}
+
+.container {
+    background-color: #d1d1d1ef;
+    padding: 30px;
+    max-width: 1140px;
+    border-radius: 20px;
 }

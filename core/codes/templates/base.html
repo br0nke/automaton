@@ -11,24 +11,28 @@
 </head>
 <body>
     <header>
-        <h1><strong>Automaton Community</strong></h1>
+        <a href="{% url "index" %}">
+            <img
+              src="{% static 'images/logo.png' %}"
+              style="float: left; height: 60px;"
+            />
+        <a/>
+        <h1 style="padding-right: 84px;"><strong>Automaton Community</strong></h1>
         
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="{% url 'index' %}" class="btn btn-primary">Home</a></li>
-                    <ul class="nav">
+            <ul class="centerd-element">
+                <a href="{% url 'index' %}" class="btn btn-primary">Home</a>
                         {% if user.is_authenticated %}
-                            <li><a href="{% url 'codes_list' %}" class="btn btn-primary">Projects</a></li>
-                            <li><a href="{% url 'chat:discussion_list' %}" class="btn btn-primary">Discussions</a></li>
-                            <li><a href="{% url 'user_detail_current' %}" class="btn btn-primary">{{ user }}</a></li>
+                            <a href="{% url 'codes_list' %}" class="btn btn-primary">Projects</a>
+                            <a href="{% url 'chat:discussion_list' %}" class="btn btn-primary">Discussions</a>
+                            <a href="{% url 'user_detail_current' %}" class="btn btn-primary">{{ user }}</a>
                             {% if user.is_superuser or user.is_staff %}
-                                <li><a href="{% url 'admin:index' %}" class="btn btn-primary">Admin</a></li>
+                                <a href="{% url 'admin:index' %}" class="btn btn-primary">Admin</a>
                             {% endif %}
-                            <li><form method="post" action="{% url "logout" %}">{% csrf_token %}<button type="submit" class="btn btn-primary">Log out</button></form></li>
+                            <a><form method="post" style="float: right;" action="{% url "logout" %}">{% csrf_token %}<button type="submit" class="btn btn-primary">Log out</button></form></a>
                         {% else %}
-                            <li><a href="{% url 'login' %}" class="btn btn-primary">Log in</a></li>
-                            <li><a href="{% url 'signup' %}" class="btn btn-primary">Sign up</a></li>
+                            <a href="{% url 'login' %}" class="btn btn-primary">Log in</a>
+                            <a href="{% url 'signup' %}" class="btn btn-primary">Sign up</a>
                         {% endif %}
-                    </ul>
             </ul>
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
