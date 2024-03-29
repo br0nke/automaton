@@ -6,8 +6,8 @@
   <div class="form">
     <div class="profile-image-container">
       {% if user.profile.picture %}
-      <a href="{{ user.profile.picture.url }}" target="_blank">
-        <img src="{{ user.profile.picture.url }}" alt="profile picture" class="rounded-circle profile-img" style="width: 400px; height: 400px; outline-style: double;">
+      <a href="{{ object.profile.picture.url }}" target="_blank">
+        <img src="{{ object.profile.picture.url }}" alt="profile picture" class="rounded-circle profile-img" style="width: 400px; height: 400px; outline-style: double;">
       </a>
     {% else %}
       <img src="{% static 'default.jpg' %}" alt="No profile picture" class="rounded-circle profile-img" style="width: 400px; height: 400px; outline-style: double;">

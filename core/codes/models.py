@@ -20,7 +20,7 @@ class CodeListing(models.Model):
     )
     title = models.CharField(max_length=100, db_index=True)
     description = models.TextField(max_length=5000)
-    image = models.ImageField(upload_to='code_listings/', blank=True, null=True)
+    image = models.ImageField(upload_to='code_listings/', blank=False, null=True)
     category = models.CharField(max_length=50, choices=CATEGORIES)
     link = models.URLField(blank=False)
     created_at = models.DateTimeField(_("created at"), auto_now_add=True, db_index=True)
