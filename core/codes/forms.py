@@ -3,6 +3,7 @@ from .models import CodeListing
 from django.core.validators import URLValidator
 from django.core.exceptions import ValidationError
 
+
 class CodeListingForm(forms.ModelForm):
     class Meta:
         model = CodeListing
