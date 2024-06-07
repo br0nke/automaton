@@ -4,6 +4,7 @@
 
 Automaton Community fosters connections and knowledge sharing among programmers. It offers features like:
 
+* User registration and customizable profile.
 * Discussion boards for in-depth technical conversations.
 * Code and project sharing to showcase creativity and inspire others.
 
