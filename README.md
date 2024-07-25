@@ -72,9 +72,5 @@ We welcome contributions from the programmer community! To get involved:
 * Create a pull request to propose your changes to the main codebase.
 * Refer to the issues list for potential areas of contribution.
 
-**License**
-
-This project is licensed under the MIT License ([https://opensource.org/license/mit](https://opensource.org/license/mit)).
-
 **Special Thanks to**
 My mentor: [@infohata](https://github.com/infohata)
